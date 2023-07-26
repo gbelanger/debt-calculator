@@ -1,14 +1,13 @@
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.List;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 //import org.apache.logging.log4j.LogManager;
 //import org.apache.logging.log4j.Logger;
 
-public class DeptCalculator {
+public class DebtCalculator {
 
-//    private static final Logger logger = LogManager.getLogger(DeptCalculator.class);
+//    private static final Logger logger = LogManager.getLogger(DebtCalculator.class);
 
     static final DecimalFormat df = new DecimalFormat("0.00");
 
@@ -16,7 +15,7 @@ public class DeptCalculator {
     private double totalInterest = 0;
     private double balanceOwed = 0;
 
-    public DeptCalculator(List<Operation> operationList) {
+    public DebtCalculator(List<Operation> operationList) {
         processOperations(operationList);
     }
 
@@ -40,6 +39,7 @@ public class DeptCalculator {
                 System.out.println("Rate change ("+date.toString()+"): " + df.format(annualRate));
             }
             if (days > 0) {
+                System.out.println(" - computing interest over "+days+" days");
                 for (int i = 0; i < days; i++) {
                     double interest = this.balanceOwed * annualRate / 100 / 365;
                     this.totalInterest += interest;

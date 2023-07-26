@@ -18,7 +18,7 @@ public class DebtCalculatorTest {
         operationList.add(finalOperation);
 
         // Compute debt
-        DeptCalculator calculator = new DeptCalculator(operationList);
+        DebtCalculator calculator = new DebtCalculator(operationList);
         double balance = calculator.getBalanceOwed();
         double capital = calculator.getTotalCapital();
         double interest = calculator.getTotalInterest();
