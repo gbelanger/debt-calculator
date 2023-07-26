@@ -1,4 +1,4 @@
-# Dept Calculator
+# Debt Calculator
 
 ## What is it?
 Code to compute the total amount of money owed including compounded interest over time.
