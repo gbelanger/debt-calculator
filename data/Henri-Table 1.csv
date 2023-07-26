@@ -1,4 +1,8 @@
 Date,Description,Rate %,Amount
+15 Sep 2014,Pre-Auth Pymt CEPEO Ref. ZEFT-02916,3.5,136.30
+01 Oct 2014,Pre-Auth Pymt CEPEO Ref. ZEFT-02916,3.5,136.30
+03 Nov 2014,Pre-Auth Pymt CEPEO Ref. ZEFT-02916,3.5,136.30
+01 Dec 2014,Pre-Auth Pymt CEPEO Ref. ZEFT-02916,3.5,136.30
 15 Dec 2014,ABM Cash Withdrawal 131 Queen Street,3.5,500.00
 18 Dec 2014,ABM Cash Withdrawal 131 Queen Street,3.5,500.00
 02 Jan 2015,Pre-Auth Pymt CEPEO Ref. ZEFT-02916,3.5,136.30
@@ -176,6 +180,10 @@ Date,Description,Rate %,Amount
 13 Jul 2017,Interest rate change,3.45,
 05 Sep 2017,Purchase IGA Aylmer,3.45,123.65
 07 Sep 2017,Interest rate change,3.70,
+20 Oct 2017,ABM Bill Pymt Canadian Scholar,3.70,2500.00
+20 Oct 2017,ABM Bill Pymt Canadian Scholar,3.70,1250.00
+20 Oct 2017,ABM Bill Pymt Canadian Scholar,3.70,2500.00
+30 Oct 2017,EB Transfer for RESP contributions,3.70,-4500.00
 14 Nov 2017,Purchase Nates Deli,3.70,54.52
 14 Nov 2017,Purchase Marche LaFlame,3.70,13.72
 28 Nov 2017,Purchase IGA Aylmer,3.70,65.53
