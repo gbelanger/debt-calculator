@@ -9,25 +9,25 @@ Provide an accurate calculation of a debt that includes compounded interest, acc
 
 ## How does it work?
 - An `Operation` can be either a `TransactionOperation` or a `RateChangeOperation`.
-  - The `TransactionOperation` can be a **withdrawal** or a **deposit** that respectively increase or reduce the _capital_ owed. 
+  - The `TransactionOperation` can be a **withdrawal** or a **deposit** that respectively increases or reduces the _capital_ owed. 
   - The `RateChangeOperation` defines the date and new rate when there is a change in the interest rate.
 - The `OperationFileReader` reads a CSV file that contains the operations and creates an `ArrayList<Operation>` with the data contained in 4 columns: 
   - Date (format is `26 Jul 2023` or `"dd MMM uuuu"`)
   - Description (string description)
   - Rate (variable annual interest rate)
   - Amount (non-null for transactions and null for rate changes)
-- The `DebtCalculator` takes the list of operations and computes the `totaCapital`, `totalInterest`, and their sum, `balanceOwed`. The interest is compounded on a daily basis, which approximates very closely monthly compounding.
+- The `DebtCalculator` takes the list of operations (constructor takes `ArrayList<Operation>`) and computes the `totaCapital`, `totalInterest`, and their sum, `balanceOwed`. The interest is compounded on a daily basis, which approximates very closely monthly compounding.
 
-### Input CSV file Format example
+#### Input CSV file Format example
 This sample spans 9 years, and shows examples of the three types of operations that include withdrawals, deposits, and interest rate changes.
 ```
-Date,Description,Rate,Amount
+Date,Description,AnnualRate,Amount
 28 May 2014,ABM Cash Withdrawal,3.5,500.00
 12 Sep 2014,EB BILL PYMT VISA,3.5,550.99
 15 Sep 2014,Pre-Auth Pymt CEPEO,3.5,136.30
 28 Jan 2015,Interest rate change,3.35,
 03 Jun 2015,Purchase AutoPro,3.35,600.00 
-16 Dec 2015,Purchase Provigo LeMarche #863,3.20,17.53 
+16 Dec 2015,Purchase Provigo LeMarche,3.20,17.53 
 07 Mar 2016,Purchase Cinema des Galleries,3.20,51.52
 07 Mar 2016,ABM Cash Withdrawal CDS,3.20,504.00
 07 Mar 2016,Service Charge,3.20,1.50
