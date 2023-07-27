@@ -67,4 +67,4 @@ Date,Description,AnnualRate,Amount
 ## How to use it?
 1. Clone `git clone git@github.com:gbelanger/debt-calculator.git`
 2. Compile `cd debt-calculator ; javac *.java`
-3. Run `java ComputeDebt /path/to/file`
+3. Run `java ComputeDebt sample-operations.csv`
