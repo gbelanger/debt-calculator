@@ -12,10 +12,10 @@ Provide an accurate calculation of a debt that includes compounded interest, acc
   - The `TransactionOperation` can be a **withdrawal** or a **deposit** that respectively increases or reduces the _capital_ owed. 
   - The `RateChangeOperation` defines the date and new rate when there is a change in the interest rate.
 - The `OperationFileReader` reads a CSV file that contains the operations and creates an `ArrayList<Operation>` with the data contained in 4 columns: 
-  - Date (format is `26 Jul 2023` or `"dd MMM uuuu"`)
-  - Description (string description)
-  - Rate (variable annual interest rate)
-  - Amount (non-null for transactions and null for rate changes)
+  1. Date (format is `26 Jul 2023` or `"dd MMM uuuu"`)
+  2. Description (string description)
+  3. Rate (variable annual interest rate)
+  4. Amount (non-null for transactions and null for rate changes)
 - The `DebtCalculator` takes the list of operations (constructor takes `ArrayList<Operation>`) and computes the `totaCapital`, `totalInterest`, and their sum, `balanceOwed`. The interest is compounded on a daily basis, which approximates very closely monthly compounding.
 
 #### Input CSV file Format example
