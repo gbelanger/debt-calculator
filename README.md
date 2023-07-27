@@ -18,8 +18,11 @@ Provide an accurate calculation of a debt that includes compounded interest, acc
   4. Amount (non-null for transactions and null for rate changes)
 - The `DebtCalculator` takes the list of operations (constructor takes `ArrayList<Operation>`) and computes the `totaCapital`, `totalInterest`, and their sum, `balanceOwed`. The interest is compounded on a daily basis, which approximates very closely monthly compounding.
 
-#### Input CSV file format example
-This sample (provided in `sample-operations.csv`) spans 9 years, and shows examples of the three types of operations that include withdrawals, deposits, and interest rate changes.
+### Sample input CSV files
+Two sample files are provided.
+
+#### sample-operations.csv
+Spans 9 years, and shows examples of the three types of operations that include withdrawals, deposits, and interest rate changes.
 ```
 Date,Description,AnnualRate,Amount
 28 May 2014,ABM Cash Withdrawal,3.5,500.00
@@ -51,6 +54,15 @@ Date,Description,AnnualRate,Amount
 09 May 2023,Purchase Canadian Tire Gas Bar,7.20,65.04
 08 Jun 2023,Interest rate change,7.45,
 ```
+
+#### sample-testing.csv
+Spans exactly 10 years, and contains a single initial withdrawal of 10000 and a fixed interest rate of 3%. 
+The purpose of this is to validate the compound interest calculation against an [online calculator](https://www.bankrate.com/banking/savings/compound-savings-calculator/).
+````
+Date,Description,AnnualRate,Amount
+01 Jan 2013,Initial withdrawal,3,10000
+01 Jan 2023,Final operation,3,
+````
 
 ## How to use it?
 1. Clone `git clone git@github.com:gbelanger/debt-calculator.git`
