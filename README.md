@@ -1,13 +1,11 @@
 # Debt Calculator
 
 ## What is it?
-Code to compute the total amount of money owed including compounded interest over time.
+Code to compute the total amount of money owed including compounded interest over time. 
+It was written to calculate the amount owed based on the use of a credit line with variable interest rate over a decade.
 
 ## What is the goal?
 Provide an accurate calculation of a debt that includes compounded interest, accumulated over an extended period of time from a set of operations that include both withdrawals that increase the debt and deposits that reduce it, with changing interest rates.
-
-## Who uses it?
-This was written to calculate the amount owed based on the use of a credit line with variable interest rate.
 
 ## How does it work?
 - An `Operation` can be either a `TransactionOperation` or a `RateChangeOperation`.
