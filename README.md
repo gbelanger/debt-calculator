@@ -19,7 +19,7 @@ Provide an accurate calculation of a debt that includes compounded interest, acc
 - The `DebtCalculator` takes the list of operations (constructor takes `ArrayList<Operation>`) and computes the `totaCapital`, `totalInterest`, and their sum, `balanceOwed`. The interest is compounded on a daily basis, which approximates very closely monthly compounding.
 
 #### Input CSV file format example
-This sample spans 9 years, and shows examples of the three types of operations that include withdrawals, deposits, and interest rate changes.
+This sample (provided in `sample-operations.csv`) spans 9 years, and shows examples of the three types of operations that include withdrawals, deposits, and interest rate changes.
 ```
 Date,Description,AnnualRate,Amount
 28 May 2014,ABM Cash Withdrawal,3.5,500.00
