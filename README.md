@@ -20,4 +20,7 @@ This was written to calculate the amount owed based on the use of a credit line 
   - Amount (non-null for transactions and null for rate changes)
 - The `DebtCalculator` takes the list of operations and computes the `totaCapital`, `totalInterest`, and their sum, `balanceOwed`. The interest is compounded on a daily basis, which approximates very closely monthly compounding.
 
-
+## How to use it?
+1. Clone `git clone git@github.com:gbelanger/debt-calculator.git`
+2. Compile `cd debt-calculator ; javac *.java`
+3. Run `java ComputeDebt /path/to/file`
