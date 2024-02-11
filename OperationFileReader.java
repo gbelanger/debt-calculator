@@ -5,7 +5,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDate;
+import java.util.Locale;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import com.opencsv.*;
 import com.opencsv.exceptions.CsvException;
 //import org.apache.logging.log4j.LogManager;
@@ -14,7 +16,10 @@ import com.opencsv.exceptions.CsvException;
 public class OperationFileReader {
 //    private static final Logger logger = LogManager.getLogger(OperationReader.class);
 
-    DateTimeFormatter format = DateTimeFormatter.ofPattern("dd MMM uuuu");
+    DateTimeFormatter df = new DateTimeFormatterBuilder()
+            .parseCaseInsensitive().appendPattern("d MMM yyyy").toFormatter(Locale.ENGLISH);
+
+//    DateTimeFormatter df = DateTimeFormatter.ofPattern("d MMM yyyy");
     String filename;
     ArrayList<Operation> operationList;
 
@@ -58,7 +63,8 @@ public class OperationFileReader {
             int l = 0;
             String dateAsString = dataline[l++].trim();
 //            if (debug) logger.info("date = " + dateAsString);
-            LocalDate date = LocalDate.parse(dateAsString, format);
+
+            LocalDate date = LocalDate.parse(dateAsString, df);
 
             String desc = dataline[l++].trim();
 //            if (debug) {logger.info("desc = " + desc);}
