@@ -20,9 +20,9 @@ public class ComputeDebt {
         double capital = calculator.getTotalCapital();
         double interest = calculator.getTotalInterest();
         System.out.println("FINAL TOTALS:");
-        System.out.println(" - capital = " +  DebtCalculator.df.format(capital));
-        System.out.println(" - interest = " + DebtCalculator.df.format(interest));
-        System.out.println(" - balance = " + DebtCalculator.df.format(balance));
+        System.out.println(" - capital owed = " +  DebtCalculator.df.format(capital));
+        System.out.println(" - interest owed = " + DebtCalculator.df.format(interest));
+        System.out.println(" - balance owed = " + DebtCalculator.df.format(balance));
     }
 
 }

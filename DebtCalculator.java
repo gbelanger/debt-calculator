@@ -29,8 +29,8 @@ public class DebtCalculator {
             if (operation instanceof TransactionOperation) {
                 double amount = ((TransactionOperation) operation).getAmount();
                 if (amount < 0) {
-                    System.out.println("* Deposit * ("+date.toString()+"): "+ df.format(amount));
-                    System.out.println(" - balance was: " + df.format(this.balanceOwed));
+                    System.out.println("** Deposit ("+date.toString()+"): "+ df.format(amount) +" **");
+//                    System.out.println(" - balance was: " + df.format(this.balanceOwed));
                 }
                 else {System.out.println("Withdrawal ("+date.toString()+"): " + df.format(amount));}
                 this.totalCapital += amount;
@@ -39,18 +39,21 @@ public class DebtCalculator {
                 System.out.println("Rate change ("+date.toString()+"): " + df.format(annualRate));
             }
             if (days > 0) {
-                System.out.println(" - computing interest over "+days+" days");
+//                System.out.println(" - computing interest over past "+days+" days since "+previousDate.toString());
+                double sum = 0;
                 for (int i = 0; i < days; i++) {
                     double interest = this.balanceOwed * annualRate / 100 / 365;
+                    sum += interest;
                     this.totalInterest += interest;
                     this.balanceOwed = this.totalCapital + this.totalInterest;
                 }
+                System.out.println(" - interest added: " + df.format(sum)+ " ("+days+" days at "+annualRate+"% per year since "+previousDate.toString()+")");
             }
             else {
                 System.out.println(" - same day: no added interest");
                 this.balanceOwed = this.totalCapital + this.totalInterest;
             }
-            System.out.println(" - new balance is: " + df.format(this.balanceOwed));
+            System.out.println(" - balance owed: " + df.format(this.balanceOwed) + " (" + df.format(this.totalCapital) + " + " + df.format(this.totalInterest) + ")");
             annualRate = operation.getAnnualRate();
             previousDate = date;
         }

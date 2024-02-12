@@ -23,8 +23,8 @@ public class DebtCalculatorTest {
         double capital = calculator.getTotalCapital();
         double interest = calculator.getTotalInterest();
         System.out.println("FINAL TOTALS:");
-        System.out.println(" - capital = " + capital);
-        System.out.println(" - interest = " + interest);
-        System.out.println(" - balance = " + balance);
+        System.out.println(" - capital owed = " + capital);
+        System.out.println(" - interest owed = " + interest);
+        System.out.println(" - balance owed = " + balance);
     }
 }
